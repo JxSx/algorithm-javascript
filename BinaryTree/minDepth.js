@@ -1,4 +1,8 @@
 /**
+ * leetcode 111
+ */
+const { deserializeLevel } = require('./level_serialization');
+/**
  * 树的最小深度
  * @param {*} root 
  */
@@ -26,4 +30,6 @@ var minDepth = function (root) {
     }
 };
 
+const tree = deserializeLevel([3, 9, 20, null, null, 15, 7]);
+console.log(JSON.stringify(tree, null, 2))
 console.log(minDepth(tree))
