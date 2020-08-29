@@ -25,24 +25,22 @@ function TreeNode(val) {
  * @param {*}} arr 
  */
 function deserialize(arr) {
-    let index = 0;
-    function loop(arr) {
-        if (!arr[index]) {
-            return null;
-        }
-        const root = new TreeNode(arr[index]);
-        index++;
-        root.left = loop(arr);
-        index++;
-        root.right = loop(arr);
-        return root;
+    if (!arr.length) {
+        return null;
     }
-    return loop(arr);
+    const v = arr.shift();
+    if (v == null) {
+        return null;
+    }
+    const root = new TreeNode(v);
+    root.left = deserialize(arr);
+    root.right = deserialize(arr);
+    return root;
 }
 if (require.main === module) {
     const list = serialize(binaryTreeDataSource);
     console.log(list)
-    
+
     console.log(JSON.stringify(deserialize(list), null, 2))
 }
 
