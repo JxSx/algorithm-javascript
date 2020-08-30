@@ -4,7 +4,10 @@
 /**
  * 层序遍历的序列化和反序列化
  */
-
+/**
+ * 二叉树转换为数组
+ * @param {*} root 
+ */
 function serializeLevel(root) {
     if (!root) {
         return [];
@@ -32,7 +35,7 @@ function TreeNode(val) {
 }
 
 /**
- * 对广度优先遍历的结果进行反序列化
+ * 数组转换为二叉树
  * @param {*} arr 
  */
 function deserializeLevel(arr) {
@@ -43,16 +46,30 @@ function deserializeLevel(arr) {
     const root = new TreeNode(arr.shift());
     queue.push(root);
 
-    while (queue.length) {
+    // 如下方案，队列最终的节点会产生不必要的循环
+    // while (queue.length) {
+    //     const node = queue.shift();
+    //     const leftValue = arr.shift();
+    //     if (leftValue != null) {
+    //         node.left = new TreeNode(leftValue);
+    //         queue.push(node.left);
+    //     }
+    //     const rightValue = arr.shift();
+    //     if (rightValue != null) {
+    //         node.right = new TreeNode(rightValue);
+    //         queue.push(node.right);
+    //     }
+    // }
+    for (let i = 1; i < arr.length;) {
         const node = queue.shift();
-        const v = arr.shift();
-        if (v != null) {
-            node.left = new TreeNode(v);
+        const leftValue = arr[i++];
+        if (leftValue !== null) {
+            node.left = new TreeNode(leftValue);
             queue.push(node.left);
         }
-        const rv = arr.shift();
-        if (rv != null) {
-            node.right = new TreeNode(rv);
+        const rightValue = arr[i++];
+        if (rightValue != null) {
+            node.right = new TreeNode(rightValue);
             queue.push(node.right);
         }
     }
@@ -62,7 +79,7 @@ if (require.main === module) {
     const tree = deserializeLevel([5, 2, 3, null, null, 2, 4, 3, 1]);
     console.log(JSON.stringify(tree, null, 2))
 
-    
+
     const list = serializeLevel(tree);
     console.log(list)
 }

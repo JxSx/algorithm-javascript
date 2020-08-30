@@ -1,7 +1,7 @@
 
 const { binaryTreeDataSource } = require('../common/data');
 /**
- * 前序遍历实现序列化
+ * 前序遍历实现序列化，二叉树转换为数组
  * @param {*} root 
  * @param {*} arr 
  */
@@ -21,7 +21,7 @@ function TreeNode(val) {
 }
 
 /**
- * 反序列化，前序遍历还原对象
+ * 反序列化，数组转换为二叉树
  * @param {*}} arr 
  */
 function deserialize(arr) {
