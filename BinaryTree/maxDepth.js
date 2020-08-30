@@ -18,7 +18,7 @@ var maxDepth = function (root) {
     queue.push(root);
     let depth = 0;
     while (queue.length) {
-        const size = queue.length;
+        const size = queue.length; //记录每一层的节点数，内循环添加下一层节点到队列中
         for (let i = 0; i < size; i++) {
             const node = queue.shift();
             if (node.left) queue.push(node.left);

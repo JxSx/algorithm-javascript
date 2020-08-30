@@ -43,7 +43,7 @@ function deserializeLevel(arr) {
         return null;
     }
     let queue = [];
-    const root = new TreeNode(arr.shift());
+    const root = new TreeNode(arr[0]);
     queue.push(root);
 
     // 如下方案，队列最终的节点会产生不必要的循环
