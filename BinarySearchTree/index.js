@@ -1,4 +1,6 @@
 /**
+ * 学习链接：https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/er-cha-sou-suo-shu-cao-zuo-ji-jin
+ * 
  * 二叉搜索树的增、删、查；判断合法性
  * 
  * 二叉搜索树的定义是：一个二叉树中，任意节点的值要大于等于左子树所有节点的值，且要小于等于右边子树的所有节点的值。
@@ -9,6 +11,8 @@ const { deserializeLevel } = require("../BinaryTree/level_serialization");
 /**
  * 判断合法性
  * @param {*} root 
+ * @param {*} min 判断右子树时传递根结点
+ * @param {*} max 判断左子树时传递根结点
  */
 function isValidBST(root, min, max) {
     if (!root) return true;
