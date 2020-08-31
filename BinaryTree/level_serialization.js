@@ -4,6 +4,8 @@
 /**
  * 层序遍历的序列化和反序列化
  */
+
+const TreeNode = require("../common/TreeNode");
 /**
  * 二叉树转换为数组
  * @param {*} root 
@@ -26,12 +28,6 @@ function serializeLevel(root) {
         }
     }
     return arr;
-}
-
-
-
-function TreeNode(val) {
-    this.val = val;
 }
 
 /**

@@ -1,5 +1,7 @@
 
 const { binaryTreeDataSource } = require('../common/data');
+
+const TreeNode = require("../common/TreeNode");
 /**
  * 前序遍历实现序列化，二叉树转换为数组
  * @param {*} root 
@@ -16,9 +18,6 @@ function serialize(root, arr = []) {
     return arr;
 }
 
-function TreeNode(val) {
-    this.val = val;
-}
 
 /**
  * 反序列化，数组转换为二叉树

@@ -7,7 +7,7 @@
  */
 
 const { deserializeLevel } = require("../BinaryTree/level_serialization");
-
+const TreeNode = require("../common/TreeNode");
 /**
  * 判断合法性
  * @param {*} root 
@@ -38,9 +38,6 @@ function isInBST(root, target) {
     }
 }
 
-function TreeNode(val) {
-    this.val = val;
-}
 /**
  * 在BST中插入一个数
  * @param {*} root 
