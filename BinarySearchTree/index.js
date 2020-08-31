@@ -54,6 +54,44 @@ function insertInfoBST(root, target) {
     return root;
 }
 
+/**
+ * 获取最小节点
+ * @param {*} node 
+ */
+function getMinNode(node) {
+    while (node.left) {
+        node = node.left;
+    }
+    return node;
+}
+/**
+ * 删除某个节点
+ * @param {*} root 
+ * @param {*} target 
+ */
+function deleteNode(root, target) {
+    if (!root) return null;
+    if (root.val === target) {
+        // 分三种情况
+        // 1. 当前节点没有左、右子节点
+        if (root.left === null && root.right === null) {
+            return null;
+        }
+        // 2. 当前节点没有左节点或者右子节点
+        if (root.left === null) return root.right;
+        if (root.right === null) return root.left;
+        // 3. 当前节点左右子节点都包含
+        const minNode = getMinNode(root.right); // 获取右子树最小节点
+        root.val = minNode.val; // 修改当前节点值
+        root.right = deleteNode(root.right, minNode.val); //删除右子树最小节点
+    } else if (root.val < target) {
+        root.right = deleteNode(root.right, target);
+    } else if (root.val > target) {
+        root.left = deleteNode(root.left, target);
+    }
+    return root;
+}
+
 if (require.main === module) {
     const tree = deserializeLevel([5, 2, 6, 1, 4, null, 7, null, null, 3])
     console.log(JSON.stringify(tree, null, 2))
@@ -61,4 +99,5 @@ if (require.main === module) {
     console.log("查找结点：", isInBST(tree, 3))
     const newTree = insertInfoBST(tree, 2.2);
     console.log("新树：", JSON.stringify(newTree, null, 2));
+    console.log("删除节点：", JSON.stringify(deleteNode(newTree, 2), null, 2))
 }
