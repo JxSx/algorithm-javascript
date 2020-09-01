@@ -1,10 +1,12 @@
-const { nAryTreeDataSource } = require('../common/data');
+import { Area } from "../common/data";
+
+const { N_ARY_TREE_DATA_SOURCE } = require('../common/data');
 /**
  * 树结构查找某个结点算法
  * @param {*} root 
  * @param {*} data 
  */
-function findNode(root, data) {
+function findNode(root: Area, data: string): any {
     console.log(root.name)
     if (!root) return null;
     if (root.name === data) {
@@ -14,7 +16,7 @@ function findNode(root, data) {
         return null;
     }
     for (let item of root.children) {
-        let node = findNode(item, data);
+        let node: Area = findNode(item, data);
         if (node) return node;
     }
 }
@@ -25,7 +27,7 @@ function findNode(root, data) {
  * @param {*} data 
  * @param {*} arr 
  */
-function findNodePath(root, data, arr = []) {
+function findNodePath(root: Area, data: string, arr: string[] = []): any {
     if (!root) return null;
     if (root.name === data) {
         arr.push(root.name);
@@ -42,5 +44,5 @@ function findNodePath(root, data, arr = []) {
     arr.pop(); // 出栈
 }
 
-console.log(findNode(nAryTreeDataSource, "铜川"))
-console.log(findNodePath(nAryTreeDataSource, "铜川"))
+console.log(findNode(N_ARY_TREE_DATA_SOURCE, "铜川"))
+console.log(findNodePath(N_ARY_TREE_DATA_SOURCE, "铜川"))

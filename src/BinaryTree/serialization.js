@@ -1,5 +1,5 @@
 
-const { binaryTreeDataSource } = require('../common/data');
+const { BINARY_TREE_DATA_SOURCE } = require('../common/data');
 
 const TreeNode = require("../common/TreeNode");
 /**
@@ -37,7 +37,7 @@ function deserialize(arr) {
     return root;
 }
 if (require.main === module) {
-    const list = serialize(binaryTreeDataSource);
+    const list = serialize(BINARY_TREE_DATA_SOURCE);
     console.log(list)
 
     console.log(JSON.stringify(deserialize(list), null, 2))

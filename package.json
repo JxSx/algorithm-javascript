@@ -1,0 +1,28 @@
+{
+  "name": "awesome-javascript",
+  "version": "1.0.0",
+  "description": "算法学习、实践",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "./node_modules/.bin/tsc -p ./src",
+    "build:live": "nodemon --watch src/**/*.ts --exec ./node_modules/.bin/ts-node src/NAryTree/findNode.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JxSx/awesome-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JxSx/awesome-javascript/issues"
+  },
+  "homepage": "https://github.com/JxSx/awesome-javascript#readme",
+  "devDependencies": {
+    "@types/node": "^14.6.2",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}

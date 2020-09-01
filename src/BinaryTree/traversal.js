@@ -1,4 +1,4 @@
-const { binaryTreeDataSource } = require('../common/data');
+const { BINARY_TREE_DATA_SOURCE } = require('../common/data');
 /*
             F
           /   \
@@ -21,7 +21,7 @@ const preOrder = function (root, arr = []) {
     preOrder(root.right, arr); // 遍历右子树
     return arr;
 }
-console.log("前序遍历：", preOrder(binaryTreeDataSource));
+console.log("前序遍历：", preOrder(BINARY_TREE_DATA_SOURCE));
 
 
 
@@ -37,7 +37,7 @@ const inOrder = function (root, arr = []) {
     inOrder(root.right, arr); // 遍历左子树
     return arr;
 }
-console.log("中序遍历：", inOrder(binaryTreeDataSource));
+console.log("中序遍历：", inOrder(BINARY_TREE_DATA_SOURCE));
 
 
 /**
@@ -52,7 +52,7 @@ const postOrder = function (root, arr = []) {
     arr.push(root.val);
     return arr;
 }
-console.log("后序遍历：", postOrder(binaryTreeDataSource));
+console.log("后序遍历：", postOrder(BINARY_TREE_DATA_SOURCE));
 
 
 
@@ -78,7 +78,7 @@ var BFS = function (root) {
     return result;
 };
 
-console.log("深度优先遍历：", BFS(binaryTreeDataSource));
+console.log("深度优先遍历：", BFS(BINARY_TREE_DATA_SOURCE));
 
 
 /**
@@ -107,4 +107,4 @@ function levelOrder(root) {
     return result;
 }
 
-console.log("层序遍历：", levelOrder(binaryTreeDataSource));
+console.log("层序遍历：", levelOrder(BINARY_TREE_DATA_SOURCE));

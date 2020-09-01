@@ -1,4 +1,4 @@
-const binaryTreeDataSource = {
+export const BINARY_TREE_DATA_SOURCE = {
     val: "F",
     left: {
         val: "B",
@@ -27,7 +27,13 @@ const binaryTreeDataSource = {
     }
 };
 
-const nAryTreeDataSource = {
+export interface Area {
+    code: string;
+    name: string;
+    children?: Area[];
+}
+
+export const N_ARY_TREE_DATA_SOURCE: Area = {
     code: "china",
     name: "中国",
     children: [{
@@ -67,8 +73,3 @@ const nAryTreeDataSource = {
         name: '四川'
     }]
 };
-
-module.exports = {
-    binaryTreeDataSource,
-    nAryTreeDataSource
-}
