@@ -1,4 +1,4 @@
-const { data, exch } = require('./common');
+const { data } = require('./common');
 //  0  1   2   3  4   5   6   7   8   9  10, 11  12  13  14
 // [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]  索引9赋值给索引0
 // [2, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]  索引1赋值给索引9
@@ -34,5 +34,6 @@ const quickSort = (array, low, high) => {
     quickSort(array, mid + 1, high)
     return array;
 }
-
-console.log(quickSort(data, 0, data.length - 1));
+if(module === require.main) {
+    console.log(quickSort(data, 0, data.length - 1));
+}

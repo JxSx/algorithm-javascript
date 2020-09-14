@@ -14,16 +14,18 @@ function insertSort(array) {
 }
 
 const insertSortImproved = array => {
+    let j;
     for (let i = 1; i < array.length; i++) {
         let temp = array[i];
-        let j;
-        for (j = i - 1; j >= 0 && array[j] > temp; j--) {
-            console.count("计数")
-            array[j + 1] = array[j];
+        for (j = i; j >= 1 && array[j - 1] > temp; j--) {
+            console.count("计数Improved")
+            array[j] = array[j - 1];
         }
-        array[j + 1] = temp;
+        array[j] = temp;
     }
     return array;
 }
-
-console.log(insertSortImproved(data))
+if (module === require.main) {
+    // console.log(insertSort(data));
+    console.log(insertSortImproved(data));
+}
