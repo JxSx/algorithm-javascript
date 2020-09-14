@@ -1,4 +1,3 @@
-// const { nAryTreeDataSource } = require('../common/data');
 
 /**
  * 深度优先遍历
@@ -15,7 +14,6 @@ function DFS(root, arr = []) {
     }
     return arr;
 }
-// console.log(DFS(nAryTreeDataSource));
 
 /**
  * 广度优先遍历，返回一维数组
@@ -37,7 +35,6 @@ var BFS = function (root) {
     return result;
 };
 
-// console.log(BFS(nAryTreeDataSource));
 
 
 var levelOrder = function (root) {
@@ -61,7 +58,13 @@ var levelOrder = function (root) {
     return result;
 };
 
-// console.log(levelOrder(nAryTreeDataSource));
+if (module === require.main) {
+    const { nAryTreeDataSource } = require('../common/data');
+    console.log(DFS(nAryTreeDataSource));
+    console.log(BFS(nAryTreeDataSource));
+    console.log(levelOrder(nAryTreeDataSource));
+}
+
 module.exports = {
     BFS, DFS, levelOrder
 }
