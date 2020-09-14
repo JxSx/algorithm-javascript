@@ -29,3 +29,8 @@ if (module === require.main) {
     // console.log(insertSort(data));
     console.log(insertSortImproved(data));
 }
+
+module.exports = {
+    insertSort,
+    insertSortImproved
+}
